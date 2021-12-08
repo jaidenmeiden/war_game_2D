@@ -8,6 +8,11 @@ public class Fade : MonoBehaviour
     [SerializeField]
     SpriteRenderer spriteRenderer;
 
+    private void Start()
+    {
+        FadeOut();
+    }
+    
     [ContextMenu("FadeIn")]
     public void FadeIn()
     {
@@ -18,10 +23,5 @@ public class Fade : MonoBehaviour
     public void FadeOut()
     {
         spriteRenderer.DOFade(0,2);
-    }
-
-    private void Start()
-    {
-        FadeOut();
     }
 }
