@@ -45,3 +45,6 @@ Make a request to a uniform resource identifier (URI).
 
 [Weather Conditions](https://openweathermap.org/weather-conditions)
 
+# Design Patterns
+
+[Game Programming Patterns](https://gameprogrammingpatterns.com/contents.html)
