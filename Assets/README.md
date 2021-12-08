@@ -35,3 +35,7 @@ Sets a callback that will be fired once when the tween starts (meaning when the 
 
 # Web Request
 
+Make a request to a uniform resource identifier (URI).
+
+[Weather API](https://openweathermap.org/api)
+
