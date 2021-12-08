@@ -38,4 +38,7 @@ Sets a callback that will be fired once when the tween starts (meaning when the 
 Make a request to a uniform resource identifier (URI).
 
 [Weather API](https://openweathermap.org/api)
+[API Keys](https://home.openweathermap.org/api_keys)
+[JSON](https://openweathermap.org/current#current_JSON)
+[Weather Conditions](https://openweathermap.org/weather-conditions)
 
