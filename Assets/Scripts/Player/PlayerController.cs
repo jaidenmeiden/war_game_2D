@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private float movementX;
     private float movementY;
     public float speed = 2;
+    public float maxSpeed = 5;
+    public float speedTotation = 2;
     
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,9 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(movementX, movementY) * speed;
+        //rb.velocity = new Vector2(movementX, movementY) * speed;
+        rb.rotation -= movementX * speedTotation;
+        speed = Mathf.Clamp(speed + movementY, 1.5f, maxSpeed);
+        rb.velocity = transform.up * speed;
     }
 }
