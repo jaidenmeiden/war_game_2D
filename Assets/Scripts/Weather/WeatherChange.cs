@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using LitJson;
 
 public class WeatherChange : MonoBehaviour
 {
+    private int actuaWeather;
+    
     private string city_name = "valencia";
     private string state_code = "46017";
     private string API_key = "1d3a078f7d1473c54a01a04645f9e6d0";
@@ -20,7 +23,10 @@ public class WeatherChange : MonoBehaviour
         }
         else
         {
-            Debug.Log(www.downloadHandler.text);
+            //Debug.Log(www.downloadHandler.text);
+            JsonData jsonData = JsonMapper.ToObject(www.downloadHandler.text);
+            actuaWeather = (int) jsonData["weather"][0]["id"];
+            Debug.Log(actuaWeather);
         }
     }
     
