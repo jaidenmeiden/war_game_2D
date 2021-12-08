@@ -10,7 +10,9 @@ public class EnemyLife : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Instantiate(explosionEffect, transform);
+            //Instantiate(explosionEffect, transform);
+            GameObject go = Instantiate(explosionEffect);
+            go.transform.position = transform.position;
             Destroy(gameObject);
         }
     }
