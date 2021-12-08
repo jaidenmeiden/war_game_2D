@@ -22,3 +22,16 @@ You can pass it either a default ease (Ease – to see how default ease curves l
 Additionally, the following optional parameters can be set: they work only with Back and Elastic eases.
 
 **NOTE:** Back and Elastic eases (meaning any ease that goes below or beyond the start and end values) don't work with paths.
+
+# Callbacks (SetEase)
+
+`OnComplete(TweenCallback callback)`
+
+Sets a callback that will be fired the moment the tween reaches completion, all loops included.
+
+`OnStart(TweenCallback callback)`
+
+Sets a callback that will be fired once when the tween starts (meaning when the tween is set in a playing state the first time, after any eventual delay).
+
+# Web Request
+
