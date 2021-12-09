@@ -48,3 +48,7 @@ Make a request to a uniform resource identifier (URI).
 # Design Patterns
 
 [Game Programming Patterns](https://gameprogrammingpatterns.com/contents.html)
+
+# Audio resources
+
+[Free sound](https://freesound.org/)

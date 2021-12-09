@@ -27,6 +27,11 @@ public class PlayerController : MonoBehaviour
         movementY = movementVector.y;
     }
 
+    private void OnFire()
+    {
+        SoundManager.instance.PlayShoot();
+    }
+
     private void FixedUpdate()
     {
         //rb.velocity = new Vector2(movementX, movementY) * speed;
