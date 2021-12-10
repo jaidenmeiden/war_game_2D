@@ -5,11 +5,13 @@ using DG.Tweening;
 
 public class ShipMovementt : MonoBehaviour
 {
+    public int destination;
+    public int duration;
     public Ease ease;
     
     // Start is called before the first frame update
     void Start()
     {
-        transform.DOMoveX(0, 2).SetEase(ease);
+        transform.DOMoveX(destination, duration).SetEase(ease);
     }
 }
