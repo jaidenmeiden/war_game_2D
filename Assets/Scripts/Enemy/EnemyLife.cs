@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyLife : MonoBehaviour
 {
     public GameObject explosionEffect;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -13,7 +14,30 @@ public class EnemyLife : MonoBehaviour
             //Instantiate(explosionEffect, transform);
             GameObject go = Instantiate(explosionEffect);
             go.transform.position = transform.position;
-            Destroy(gameObject);
+            Deactivate();
         }
+
+        if (collision.CompareTag("Bullet"))
+        {
+            Deactivate();
+            // Deactivate enemy and add this to the object pool list
+        }
+    }
+    
+    private void OnEnable()
+    {
+        GameManager.OnUpdateScore += Deactivate;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnUpdateScore.Invoke();
+        GameManager.OnUpdateScore -= Deactivate;
+    }
+
+    private void Deactivate()
+    {
+        // Deactivate replace Destroy
+        gameObject.SetActive(false);
     }
 }
