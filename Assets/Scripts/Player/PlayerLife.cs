@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class PlayerLife : MonoBehaviour
 {
-    public GameObject explosionEffect;
+    //public GameObject explosionEffect;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
-            //FindObjectOfType<GameManager>().PlayerKilled();
+            FindObjectOfType<GameManager>().PlayerKilled();
             
             /*GameObject go = Instantiate(explosionEffect);
             go.transform.position = transform.position;
