@@ -49,6 +49,23 @@ Make a request to a uniform resource identifier (URI).
 
 [Game Programming Patterns](https://gameprogrammingpatterns.com/contents.html)
 
+# Singleton pattern
+
+In software engineering, the singleton pattern is a software design pattern that restricts the instantiation of a class to one "single" instance. This is useful when exactly one object is needed to coordinate actions across the system.
+
+In mathematics, a singleton, also known as a unit set, is a set with exactly one element. For example, the set {null } is a singleton containing the element null.
+
+# Panel UI
+
+If you add to game an object `UI panel`, automatically is adding to the game an object `EvenSystem`, witch has the following error:
+
+```diff
+- InvalidOperationException: You are trying to read Input using the UnityEngine.Input class, but you have switched active Input handling to Input System package in Player Settings.
+```
+Click on button `Replace With InputSystemUIInputModule` to solve this problem.
+
+![plot](./Images/Error.jpg)
+
 # Audio resources
 
 [Free sound](https://freesound.org/)
