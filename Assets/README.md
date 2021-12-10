@@ -69,3 +69,17 @@ Click on button `Replace With InputSystemUIInputModule` to solve this problem.
 # Audio resources
 
 [Free sound](https://freesound.org/)
+
+## Possible Errors
+
+```diff
+UnityEngine.AudioSource.PlayOneShot (UnityEngine.AudioClip clip) (at <7117d168a9ec4e518e0de7d9c98bd09a>:0)
+SoundManager.PlayShoot () (at Assets/Scripts/Singleton/SoundManager.cs:32)
+PlayerController.OnFire () (at Assets/Scripts/Player/PlayerController.cs:32)
+UnityEngine.InputSystem.LowLevel.<>c__DisplayClass7_0:<set_onUpdate>b__0(NativeInputUpdateType, NativeInputEventBuffer*)
+UnityEngineInternal.Input.NativeInputSystem:NotifyUpdate(NativeInputUpdateType, IntPtr)
+```
+
+To solve the problem add an `AudioSource` to the `SoundManager`.
+
+![plot](./Images/Error1.jpg)
