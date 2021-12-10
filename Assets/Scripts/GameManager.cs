@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,24 +9,20 @@ public class GameManager : MonoBehaviour
     public static event PlayerDeath OnPlayerDeath;
 
     public GameObject gameOverScreen;
-    
-    delegate void SimpleMessage();
-    private SimpleMessage simpleMessage;
-    
+
+    public static Action OnUpdateScore;
+
     private void Awake()
     {
         gameOverScreen.SetActive(false);
         OnPlayerDeath += ShowGameOverScreen;
     }
-    
-    // Start is called before the first frame update
-    void Start()
+
+    private void OnEnable()
     {
-        simpleMessage += SendConsoleMessage;
-        simpleMessage += SendSecondConsoleMessage;
-        simpleMessage.Invoke();
+        OnUpdateScore += UpdateScoreUI;
     }
-    
+
     private void ShowGameOverScreen()
     {
         gameOverScreen.SetActive(true);
@@ -36,13 +33,8 @@ public class GameManager : MonoBehaviour
         OnPlayerDeath?.Invoke();
     }
 
-    private void SendConsoleMessage()
+    public void UpdateScoreUI()
     {
-        Debug.Log("Message sent to console");
-    }
-
-    private void SendSecondConsoleMessage()
-    {
-        Debug.Log("Second message sent to console");
+        Debug.Log("Score Updated");
     }
 }
