@@ -19,6 +19,7 @@ public class SoundManager : MonoBehaviour
             instance = this;
         }
         
+        // Get component with AudioSource
         audioSource = GetComponent<AudioSource>();
         
         // Do not destroy the target Object when loading a new Scene.
