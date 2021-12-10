@@ -11,6 +11,7 @@ public class Fade : MonoBehaviour
     private void Start()
     {
         FadeOut();
+        GameManager.OnPlayerDeath += FadeIn;
     }
     
     [ContextMenu("FadeIn")]
